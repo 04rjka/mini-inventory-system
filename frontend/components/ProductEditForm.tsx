@@ -177,7 +177,7 @@ export default function ProductEditForm({
 
             <div className="space-y-1">
               <label className="text-xs font-medium text-muted-foreground">Category</label>
-              <Select value={category} onValueChange={setCategory}>
+              <Select value={category} onValueChange={(v) => setCategory(v ?? '')}>
                 <SelectTrigger>
                   <SelectValue placeholder="Select a category" />
                 </SelectTrigger>

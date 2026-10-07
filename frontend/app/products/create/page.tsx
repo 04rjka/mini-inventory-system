@@ -98,7 +98,7 @@ export default function CreateProductPage() {
                 required
                 value={formData.category}
                 onValueChange={(val) =>
-                  setFormData({ ...formData, category: val })
+                  setFormData({ ...formData, category: val ?? '' })
                 }
               >
                 <SelectTrigger id="category">

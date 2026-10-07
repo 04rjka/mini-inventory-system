@@ -110,7 +110,7 @@ export default function ProductsPage() {
           <div className="w-full sm:w-64">
             <Select
               value={selectedCategory}
-              onValueChange={setSelectedCategory}
+              onValueChange={(v) => setSelectedCategory(v ?? 'all')}
             >
               <SelectTrigger>
                 <SelectValue placeholder="All Categories" />

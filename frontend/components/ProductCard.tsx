@@ -12,11 +12,15 @@ interface ProductCardProps {
     onDelete: (id: number) => void;
 }
 
+const API_ORIGIN = new URL(
+  process.env.NEXT_PUBLIC_API_BASE_URL ?? 'http://localhost:8000/api'
+).origin;
+
 export default function ProductCard({ product, onDelete }: ProductCardProps) {
     const imageUrl = product.image
         ? product.image.startsWith('http')
             ? product.image
-            : `http://127.0.0.1:8000${product.image}`
+            : `${API_ORIGIN}${product.image}`
         : null;
 
     return (
